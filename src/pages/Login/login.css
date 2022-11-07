@@ -1,0 +1,38 @@
+.container-login {
+    max-width: 600px;
+    width: 90%;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.input {
+    max-width: 600px;
+    width: 90%;
+    margin-bottom: 14px;
+    padding: 14px 0;
+    user-select: none;
+    border-radius: 4px;
+    border: none;
+
+
+}
+
+.link {
+    background-color: #3366FF;
+    padding:14px 0;
+    border-radius: 4px;
+    
+    color: #FFF;
+    font-weight: bold;
+
+
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+  }
