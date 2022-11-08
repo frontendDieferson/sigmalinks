@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import './login.css'
+import "./login.css";
 import { Logo } from "../../components/Logo";
 
 export default function Login() {
@@ -8,7 +8,11 @@ export default function Login() {
       <Logo />
       <form className="container-form">
         <input className="input" placeholder="Digite Seu Email" type="text" />
-        <input className="input" placeholder="Digite sua Senha" type="password" />
+        <input
+          className="input"
+          placeholder="Digite sua Senha"
+          type="password"
+        />
         <Link className="link" to="/admin">
           Acessar
         </Link>
