@@ -15,7 +15,7 @@ export default function Login() {
     e.preventDefault();
 
    if(email === '' || password === '') {
-    alert('Preencha todos os campos')
+    toast.warning('Preencha todos os campos')
     return
    }
    signInWithEmailAndPassword(auth, email, password)
@@ -25,7 +25,6 @@ export default function Login() {
    })
    .catch(() => {
     toast.error('Email ou Senha incorreto, tente novamente!')
-    console.log('Erro ao logar sua conta')
    })
   }
 
