@@ -10,6 +10,7 @@
 ### Alguns Comandos para criar o projeto
 `npx-create-react-app my-app`
 
+### Tecnologias
 
 <p style='text-align: center; margin-top: 14px'>Tela ainda sendo desenvolvida</p>
 
