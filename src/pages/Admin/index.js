@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./admin.css";
 import { Header } from "../../components/Header";
 import { Logo } from "../../components/Logo";
@@ -13,6 +13,25 @@ export default function Admin() {
   const [urlInput, setUrlInput] = useState("");
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
   const [textColorInput, setTextColorInput] = useState("#121212");
+  const [links, setLinks] = useState([])
+
+  useEffect(() => {
+    const linksRef = collection(db, 'links')
+    const queryRef = query(linksRef, orderBy('created', 'asc'))
+    const unsub = onSnapshot(queryRef, (snapshot) => {
+      let list = []
+      snapshot.forEach((doc) => {
+        list.push({
+          id: doc.id,
+          name: doc.data().name,
+          url: doc.data().url,
+          bg: doc.data().bg,
+          color: doc.data().color
+        })
+      })
+      setLinks(list)
+    })
+  }, [])
 
   async function handleRegister(e){
     e.preventDefault()
@@ -38,6 +57,11 @@ export default function Admin() {
       toast.error('Ops, erro ao salvar o link, tente novamente')
     })
 
+  }
+
+  async function handleDeleteLink(id) {
+    const docRef = doc(db, 'links', id)
+    await deleteDoc(docRef)
   }
 
   return (
@@ -92,22 +116,27 @@ export default function Admin() {
         )}
        
         <button className="btn-register" type="submit">
-          Cadastrar <MdAddLink size={24} color="#FFF" />
+          Cadastrar
         </button>
       </form>
 
       <h2 className="title">Meus Links</h2>
-      <article
+
+    {links.map((item, index) => (
+        <article
+        key={index}
         className="list"
-        style={{ backgroundColor: "#00B553", color: "#FFF" }}
+        style={{ backgroundColor: item.bg, color: item.color }}
       >
-        <p>Um link Qualquer</p>
+        <p>{item.name}</p>
         <div>
-          <button className="btn-delete">
+          <button className="btn-delete" onClick={() => handleDeleteLink(item.id)}>
             <FiTrash2 size={18} color="#FFF" />
           </button>
         </div>
       </article>
+))}
+
     </div>
   );
 }
