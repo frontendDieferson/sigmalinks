@@ -2,7 +2,6 @@ import "./home.css";
 import React, { useState, useEffect } from "react";
 import { getDocs, collection, orderBy, query } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
-import { Logo } from "../../components/Logo";
 
 
 export default function Home() {
