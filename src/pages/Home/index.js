@@ -5,7 +5,7 @@ import { db } from "../../services/firebaseConnection";
 
 
 export default function Home() {
-  const [links, setLinks] = useState('')
+  const [links, setLinks] = useState([])
 
   useEffect(() => {
     function loadLinks() {
