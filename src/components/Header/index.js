@@ -4,17 +4,20 @@ import { Link } from "react-router-dom";
 
 import { auth } from "../../services/firebaseConnection";
 import { signOut } from "firebase/auth";
-
+import iconLogoFooter from '../../assets/SigmaDevIcon.png'
 export function Header() {
+
+
   async function handleLogout() {
     await signOut(auth);
   }
   return (
     <div className="admin-header">
         <nav className="nav-header">
+        <img src={iconLogoFooter} width='50px' />
           <ul>
-            <li> <Link to='/admin'>Links</Link></li>
-            <li> <Link to='/admin/social'>Redes Sociais</Link></li>
+            <li> <Link to='/'>Home</Link></li>
+           
           </ul>
          
          

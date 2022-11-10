@@ -3,7 +3,6 @@ import "./admin.css";
 import { Header } from "../../components/Header";
 import { Logo } from "../../components/Logo";
 import { Input } from "../../components/Input";
-import { MdAddLink } from "react-icons/md";
 import { FiTrash2 } from "react-icons/fi";
 import { toast } from "react-toastify";
 import { db } from "../../services/firebaseConnection";
@@ -18,7 +17,7 @@ export default function Admin() {
   useEffect(() => {
     const linksRef = collection(db, 'links')
     const queryRef = query(linksRef, orderBy('created', 'asc'))
-    const unsub = onSnapshot(queryRef, (snapshot) => {
+     onSnapshot(queryRef, (snapshot) => {
       let list = []
       snapshot.forEach((doc) => {
         list.push({

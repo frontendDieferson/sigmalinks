@@ -1,11 +1,12 @@
 .admin-header {
     width: 100%;
-    max-width: 720px;
+   
     margin-top: 14px;
     padding: 0 14px;
  
 
 }
+
 .admin-header p {
     color: #FFF;
     font-size: 1rem;
@@ -15,14 +16,17 @@
 
 .nav-header {
     width: 100%;
+    max-width: 720px;
     height: 50px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .nav-header ul {
     list-style: none;
     display: flex;
     flex-direction: row;
+    justify-content: start;
 }
 .nav-header li {
     margin: 0 14px;
