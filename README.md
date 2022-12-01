@@ -1,4 +1,4 @@
-# Sigma Links - Projeto baseado na aplicação inkTree.
+# Sigma Links - Projeto baseado na aplicação linkTree.
 <div style='text-align: center'>
 <img src='https://user-images.githubusercontent.com/62387982/200441084-e5f1ca1f-23ac-452c-8281-d51d64eb6344.png' width="200px"></img>
 </div>
