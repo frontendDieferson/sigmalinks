@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./admin.css";
 import { Header } from "../../components/Header";
-import { Logo } from "../../components/Logo";
 import { Input } from "../../components/Input";
 import { FiTrash2 } from "react-icons/fi";
 import { toast } from "react-toastify";
@@ -66,7 +65,6 @@ export default function Admin() {
   return (
     <div className="admin-container">
       <Header />
-      <Logo />
 
       <form className="form" onSubmit={handleRegister}>
         <label className="label">Nome do Link</label>
